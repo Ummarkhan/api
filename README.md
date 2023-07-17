@@ -6,4 +6,4 @@ acitvate virtual envirnoment  using command on windows .\env\Scripts\activate on
 install requirements.txt using command pip install -r requirements.txt
 run project on vs code using command flask run
 note:
-mke sure to replace  your_username, your_password, and your_database_name with your MySQL credentials. 
+make sure to replace  your_username, your_password, and your_database_name with your MySQL credentials. 
