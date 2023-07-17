@@ -30,7 +30,12 @@ def upload_file():
 
             for row in sheet.iter_rows(min_row=2, values_only=True):
                 order_id, product_name, product_price, shipped = row
-
+                # check if order_id is already in database
+                cursor.execute("SELECT * FROM orders WHERE order_id=%s",(order_id,))
+                existing_order=cursor.fetchone()
+                if existing_order:
+                    print(f"skipping duplicate order_id: {order_id}")
+                    continue
                 # Insert data into the database
                 query = "INSERT INTO orders (order_id, product_name, product_price, shipped) VALUES (%s, %s, %s, %s)"
                 values = (order_id, product_name, product_price, shipped)
