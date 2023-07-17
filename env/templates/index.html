@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>flask</title>
+    <link rel="stylesheet" href="{{url_for('static',filename='css/index.css')}}">
+</head>
+<body>
+  <h1>Upload an Excel file</h1>
+  <div class="box">
+    <span class="borderline"></span>
+  <form method="POST" enctype="multipart/form-data">
+    <div class="inputBox">
+      <input type="file" name="file" accept=".xlsx">
+    </div>
+      <div class="inputBox">
+      <input type="submit" value="Upload">
+      </div>
+      <div class="links">
+        <a href="/download">Download Database Details</a>
+      </div>
+      <div class='inputBox'>
+        <a href="/delete">Delete Data From Database</a>
+      </div>
+    </form>
+  </div>
+</body>
+</html>
